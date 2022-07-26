@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+@font-face {
+  font-family: Norse;
+  src: url(./fonts/Norse-Bold.otf);
+}
+
+img {
+  height: 100vh;
+}
+
+.image-area{
+  width: fit-content;
+  position: relative;
+}
+
+.image-area > div {
+  position: absolute;
+  color: white;
+  background-color: rgb(0, 0, 0, 0.6);
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  font-family: Norse, sans-serif;
+  font-size: 76px;
+  font-weight: bold;
+}
