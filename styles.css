@@ -1,12 +1,81 @@
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
 body {
   margin: 0;
   padding: 0;
   display: flex;
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 @font-face {
   font-family: Norse;
   src: url(./fonts/Norse-Bold.otf);
+}
+
+.signup-area {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #F9FAFB;
+  width: 100%;
+}
+
+p {
+  padding-left: 60px;
+  margin: 0;
+  font-size: 1.5rem;
+  width: 700px;
+}
+
+p:last-of-type {
+  margin-top: 22px;
+}
+
+p:last-of-type + div {
+  width: 100%;
+}
+
+form {
+  margin-top: 32px;
+  padding-left: 60px;
+  background-color: white;
+}
+
+fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 56px;;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  margin-bottom: 24px;
+  padding-top: 24px;
+  font-size: 32px;
+}
+
+input {
+  margin-bottom: 24px;
+  padding-right: 48px;
+  width: 250px;
+}
+
+label, input {
+  display: block;
+}
+
+button {
+  visibility: hidden;
+}
+
+.login {
+  color: rgb(6, 71, 6);
+  font-weight: bold;;
+  text-decoration: none;
 }
 
 .bg-image {
@@ -15,13 +84,6 @@ body {
 
 .image-area{
   position: relative;
-}
-
-.signup-area {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .image-banner {
