@@ -1,12 +1,8 @@
-* {
-  -webkit-font-smoothing: antialiased;
-}
-
 body {
   margin: 0;
   padding: 0;
   display: flex;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Arial;
 }
 
 @font-face {
@@ -26,21 +22,26 @@ p {
   padding-left: 60px;
   margin: 0;
   font-size: 1.5rem;
-  width: 700px;
+  width: 750px;
+}
+
+.signup-text p {
+  font-weight: bold;
 }
 
 p:last-of-type {
   margin-top: 22px;
 }
 
-p:last-of-type + div {
-  width: 100%;
+label + p {
+  font-size: 18px;
 }
 
 form {
   margin-top: 32px;
   padding-left: 60px;
   background-color: white;
+  box-shadow: rgb(167, 167, 167) 10px 1px 12px -2px;
 }
 
 fieldset {
@@ -59,23 +60,68 @@ legend {
 }
 
 input {
-  margin-bottom: 24px;
-  padding-right: 48px;
+  margin: 0px 48px 24px 0;
+  padding: 8px;
   width: 250px;
+  border-radius: 2px;
+  border: #E5E7EB solid 2px;
+  font-size: 18px;
+}
+
+input:focus {
+  outline: none;
+  border: rgb(20, 128, 250) solid 2px;
+  box-shadow: rgb(167, 167, 167) 1px 3px 10px;
+}
+
+input:hover {
+  border-color: #cacccf;
 }
 
 label, input {
   display: block;
 }
 
+label:first-child {
+font-size: 12px;
+font-weight: bold;
+color: #252F3C;
+padding-left: 1px;
+}
+
+input[type="password"]:invalid {
+  border-color: red;
+}
+
 button {
   visibility: hidden;
 }
 
+.button-label {
+  background-color: #596D48;
+  width: 220px;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+  padding: 12px 0px;
+  margin-left: 60px;
+  margin-top: 40px;
+  border-radius: 8px;
+}
+
+.button-label:hover {
+  background-color: #72865f;
+}
+
 .login {
-  color: rgb(6, 71, 6);
-  font-weight: bold;;
+  color: #596D48;
+  font-weight: bold;
   text-decoration: none;
+}
+
+.login:hover {
+  color: #72865f;
 }
 
 .bg-image {
