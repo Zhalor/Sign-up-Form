@@ -41,21 +41,21 @@
           </div>
           <div>
             <label for="email">EMAIL</label>
-            <input type="text" id="email" class="email" name="email" required>
+            <input type="email" id="email" class="email" name="email" required>
           </div>
           <div>
             <label for="phone">PHONE NUMBER</label>
-            <input type="text" id="phone" class="phone" name="phone" required>
+            <input type="tel" id="phone" class="phone" name="phone" required>
           </div>
           <div>
             <label for="password">PASSWORD</label>
             <input type="password" id="password" name="password" required>
-            <span class="holder"></span>
+            <span></span>
           </div>
           <div>
             <label for="conf-pass">CONFIRM PASSWORD</label>
             <input type="password" id="conf-pass" name="conf-pass" required>
-            <span class="holder"></span>
+            <span></span>
           </div>
          
             <button type="submit" id="submit" class="hidden"></button>
@@ -70,19 +70,22 @@
 <script>
 
   const btn = document.querySelector("#submit");
+  const btnLabel = document.querySelector(".button-label");
   const password = document.querySelector("#password");
   const confPassword = document.querySelector("#conf-pass");
-  const error = document.querySelectorAll(".holder");
+  const errorSpan = document.querySelectorAll("span");
 
   password.addEventListener('keyup', () => {
     if (password.value == confPassword.value){
+      btnLabel.classList.remove("disabled-button-label");
       btn.removeAttribute("disabled");
-      error.forEach((item) => {
+      errorSpan.forEach((item) => {
         item.classList.remove("error");
       })
     } else {
+      btnLabel.classList.add("disabled-button-label");
       btn.setAttribute("disabled", "");
-      error.forEach((item) => {
+      errorSpan.forEach((item) => {
         item.classList.add("error");
       })
     }
@@ -90,13 +93,15 @@
 
   confPassword.addEventListener('keyup', () => {
     if (password.value == confPassword.value){
+      btnLabel.classList.remove("disabled-button-label");
       btn.removeAttribute("disabled");
-      error.forEach((item) => {
+      errorSpan.forEach((item) => {
         item.classList.remove("error");
       })
     } else {
+      btnLabel.classList.add("disabled-button-label");
       btn.setAttribute("disabled", "");
-      error.forEach((item) => {
+      errorSpan.forEach((item) => {
         item.classList.add("error");
       })
     }
