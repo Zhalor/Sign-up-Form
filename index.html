@@ -33,27 +33,29 @@
           <legend>Let's do this!</legend>
           <div>
             <label for="first-name">FIRST NAME</label>
-            <input type="text" id="first-name" class="first-name" name="first-name">
+            <input type="text" id="first-name" class="first-name" name="first-name" required>
           </div>
           <div>
             <label for="last-name">LAST NAME</label>
-            <input type="text" id="last-name" class="last-name" name="last-name">
+            <input type="text" id="last-name" class="last-name" name="last-name" required>
           </div>
           <div>
             <label for="email">EMAIL</label>
-            <input type="text" id="email" class="email" name="email">
+            <input type="text" id="email" class="email" name="email" required>
           </div>
           <div>
             <label for="phone">PHONE NUMBER</label>
-            <input type="text" id="phone" class="phone" name="phone">
+            <input type="text" id="phone" class="phone" name="phone" required>
           </div>
           <div>
             <label for="password">PASSWORD</label>
-            <input type="password" id="password" class="password" name="password" required>
+            <input type="password" id="password" name="password" required>
+            <span class="holder"></span>
           </div>
           <div>
             <label for="conf-pass">CONFIRM PASSWORD</label>
-            <input type="password" id="conf-pass" class="conf-pass" name="conf-pass" required>
+            <input type="password" id="conf-pass" name="conf-pass" required>
+            <span class="holder"></span>
           </div>
          
             <button type="submit" id="submit" class="hidden"></button>
@@ -64,5 +66,44 @@
       <p>Already have an account? <a href="" class="login">Log in</a></p>
     </div>
   </div>
+
+<script>
+
+  const btn = document.querySelector("#submit");
+  const password = document.querySelector("#password");
+  const confPassword = document.querySelector("#conf-pass");
+  const error = document.querySelectorAll(".holder");
+
+  password.addEventListener('keyup', () => {
+    if (password.value == confPassword.value){
+      btn.removeAttribute("disabled");
+      error.forEach((item) => {
+        item.classList.remove("error");
+      })
+    } else {
+      btn.setAttribute("disabled", "");
+      error.forEach((item) => {
+        item.classList.add("error");
+      })
+    }
+  })
+
+  confPassword.addEventListener('keyup', () => {
+    if (password.value == confPassword.value){
+      btn.removeAttribute("disabled");
+      error.forEach((item) => {
+        item.classList.remove("error");
+      })
+    } else {
+      btn.setAttribute("disabled", "");
+      error.forEach((item) => {
+        item.classList.add("error");
+      })
+    }
+  })
+
+</script>
+
 </body>
+
 </html>
